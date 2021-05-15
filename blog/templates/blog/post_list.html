@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+    {% load staticfiles %} <!-- 이미지와 같이 정적파일을 불러올 때는 다음과 가타이 작성해줍니다. -->
+
+</head>
+<body>
+<style>
+
+    .box{
+        width: 550px; height:450px;
+        border: 1px solid black;
+        display: center;
+        text-align: center;
+        margin : auto;
+    }
+    .img{
+        width: 200px; height :100px;
+        display: center;
+        text-align: center;
+        border : 5px;
+
+    }
+    p{
+        color : lightgreen;
+        font-size : 20px;
+
+    }
+
+    .body {
+        background: url('../img/2141674C573E99970A.jpeg') no -repeat center center fixed;
+    }
+
+</style>
+<div id="content">
+    {% for post in object_list %}
+    <div class="box">
+        <p> {{post.title}} </p>
+        <img src="{{post.image.url}}" >
+        <p1>Description:{{post.description}}</p1>
+        <p2>CreateDate:{{post.create_date}}</p2>
+        <p3>modify date: {{post.modify_date}}</p3>
+        <!--a태그는 하이퍼링크를 생성해줌 url 사용 가능-->
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

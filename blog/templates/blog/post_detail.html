@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://secdet.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</head>
+<body>
+<div id = "content">
+    <h1> {{ object.title }} </h1>
+    <div>
+    <p>Description:{{post.description}}</p>
+        <p>CreateDate:{{post.create_date}}</p>
+        <p>Post date: {{post.modify_date}}</p>
+        <img src="{{object.image.url}}" width="200" height="200">
+        <div id="disqus_thread"></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "content">
+    <h1> {{ object.title }} </h1>
+    <url>
+        <li>URL:<a href="{{object.url }}">{{object.url}}</a></li>
+        <li>Create Date:{{ object.create_date }}</li>
+        <li>Modify Date:{{ object.modify_date }}</li>
+    </url>
+    <iframe src="{{object.url}}"></iframe>
+</div>
+
+</body>
+</html>
