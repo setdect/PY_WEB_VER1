@@ -123,3 +123,5 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')#우리가 업로드 시킬 이미지를 저장해놓을 폴더 경로를 설정해놓습니다,. 이미지는 media라는 폴더에 다 저장해 놓을 예정입니다.
+
+LOGIN_REDIRECT_URL = '/'

@@ -10,38 +10,83 @@
 <style>
 
     .box{
-        width: 550px; height:450px;
-        border: 1px solid black;
-        display: center;
+        max-width : 600px; height: auto;
+        border: 5px solid white;
         text-align: center;
         margin : auto;
-    }
-    .img{
-        width: 200px; height :100px;
-        display: center;
-        text-align: center;
-        border : 5px;
+        object-fit: contain;
+        overflow: hidden;
 
+    }
+    img {
+        border : 10px solid black;
+        max-width: 600px;
+        max-height: auto;
+        align : center;
+        margin: auto;
+        object-fit : scale-down;
     }
     p{
         color : lightgreen;
         font-size : 20px;
+        word-break : normal;
+        width: auto;
+        background-color: black;
 
+    }
+
+    p1,p2,p3 {
+        font-size : 15px;
+        color: white;
+        font-weight: bold;
+        word-wrap: break-word;
     }
 
     .body {
         background: url('../img/2141674C573E99970A.jpeg') no -repeat center center fixed;
     }
+    h1 {
+        text-align: center;
+        box-sizing: border-box;
+        border: white;
+        font-color: white;
+        box-color: gray;
+    }
+    .text-white {
+        color: #fff!important;
+    }
+    .p-3{
+        padding: 1rem!important;
+        }
+
+    .bg-dark {
+        background-color: #343a40!important;
+        }
+     #content {
+     background-repeat: no-repeat;
+     background-image : url("../../media/background.jpg");
+     background-size: 100% 100%;
+     }
+     html {
+     background-color: black;
+     }
+
 
 </style>
+
+<div class="container p-3 my-3 bg-dark text-white">
+<h1>-WHOAMI-</h1>
+    </div>
 <div id="content">
     {% for post in object_list %}
+
     <div class="box">
         <p> {{post.title}} </p>
-        <img src="{{post.image.url}}" >
+        <img src="{{post.image.url}}" width = "500">
         <p1>Description:{{post.description}}</p1>
         <p2>CreateDate:{{post.create_date}}</p2>
         <p3>modify date: {{post.modify_date}}</p3>
+
         <!--a태그는 하이퍼링크를 생성해줌 url 사용 가능-->
     </div>
     {% endfor %}

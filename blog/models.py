@@ -3,10 +3,10 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=25)
+    title = models.CharField(max_length=1000)
     image = models.ImageField(blank=True)
     description = models.CharField('Description',
-                                   max_length=50, blank=True,
+                                   max_length=10000000000, blank=True,
                                    help_text='simple description')
     create_date = models.DateTimeField('Create Date',
                                        auto_now_add=True,

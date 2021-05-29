@@ -12,12 +12,21 @@
         text-align: center;
         transform: translate(-50%, -50%);
         color: white;
-        width : 100%;
+        width: 100%;
+        opacity: 0.6;
         }
      #title{
          left : 50%;
          top: 20%;
          font-size:60px;
+     }
+     #menu.main_text{
+     width: 100%;
+     height:60px;
+     background-color: black;
+     margin: center;
+     text-align: center;
+     text-color: black;
      }
      #made{
          left: 50%;
@@ -26,44 +35,96 @@
      }
      #menu{
          left: 50%;
-         top : 35%;
+         top : 10%;
          font-size : 30px;
+         color: black;
+         width: auto;
      }
      li{
          list-style: none;
-         display: inline-block;
+         display: inline;
          margin-left: 50px;
          margin-right: 50px;
-         font-size: 40px;
+         font-size: 20px;
+         float: center;
+         text-align: center;
      }
      a{
-         text-decoration: none;
-         color:white;
+         overflow: hidden;
+         Background-color:black;
+         font-size:15px;
+         max-width: 1000px;
+         border: 13px solid black;
+         margin: auto;
+         text-align: center;
+         letter-spacing:10px;
+         font-weight: bold;
+         color: Hotpink;
+
+
      }
-     #dlab{
-         color: red;
+
+     html {
+     height: 100%;
+     width: 100%;
+     background-color: black;
+
      }
-     #username{
-         color: greenyellow;
+
+     a:hover {
+     color: purple;
      }
+     b {
+     border : 2px; solid black;
+     }
+     #auth2{
+        left:50%;
+        top:50%;
+     }
+     .auth_menu{
+        font-size: 15px;
+        color:fuchsia;
+     }
+
+
+
+
+
+
     </style>
+
 </head>
 <body>
-    <iframe width="100%" height="1060"
-            src="https://www.youtube.com/embed/VbEx7B_PTOE?autoplay=1&mute=1"
+    <iframe width="100%" height="1200px"
+
+            src="https://www.youtube.com/embed/lA1ItxM9yIE?autoplay=1"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    <h1 class="main_text" id="title">DJANGO FRAMEWORK</h1>
-    <h1 class="main_text" id="made">Made By
-        <span id = "username">MRX</span> &amp;
-        <span id = "fr13ends">FR13ENDS</span>
-        </h1>
-    <ul class="main_text" id = "menu">
-        <li><a href="{% url 'admin:index'%}">DMIN</a></li>
-        <li><a href="{% url 'bookmark_index'%}">CYRPTHON</a></li>
-        <li><a href="#">WHOAMI</a></li>
+            allowfullscreen>    </iframe>
+    <h1 class="main_text" id="title">NTMY</h1>
+
+
+    <nav class="main_text" id = "menu">
+
+        <li>
+            <a href="{% url 'index'%}">
+                <img src = "../media/infinity.PNG">
+            </a>
+        </li>
+
+        <li><a href="{% url 'admin:index'%}">SECRET</a></li>
+        <li><a href="{% url 'bookmark_index'%}">2.-ABOUTME-</a></li>
+        <li><a href="{% url 'blog_index'%}">3.-BLOG-</a></li>
+
+
+
+    </nav>
+    <ul  id="auth2">
+        <li><a class="auth_menu" href="{% url 'login' %}">SIGN IN</a></li>
+        <li><a class="auth_menu" href="{% url 'register' %}">SIGN UP</a></li>
     </ul>
+
+
 
 
 </body>
