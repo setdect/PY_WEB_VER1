@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D.LAB X Django</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+    input[type=file] {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+        .logo {
+            flex: 1;
+        }
+        .functionTexts{
+            color: lightgrey;
+
+        }
+        #id_title{
+            width: 50%;
+            border: none;
+            border-bottom: 2px solid navy;
+        }
+        #id_description{
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        .formCard{
+            padding: 12px 20px;
+            margin: 8px 0;
+            text-align: center;
+            vertical-align: middle;
+            width: 1000px;
+        }
+        p {
+            font-size: 20px;
+            max-width: 100%;
+        }
+        .navbar-brand {
+            float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+        }
+        img {
+    border-radius: 50px;
+    text-align: center;
+    margin: auto;
+    vertical-align: middle;
+}
+.btn {
+    background-color: black;
+    color: #ff4500;
+}
+btn hover{
+    background-color: black;
+}
+.btn-primary{
+    background-color: black;
+}
+#id_title {
+    background-color: #222;
+    border-radius: 10px;
+    color:#ddd;
+    font-size: 17px;
+}
+#id_description {
+    color: #ddd;
+    background-color:#222;
+    border-radius: 30px;
+    font-size: 20px;
+
+}
+.navbar-inverse {
+    border-radius: 5px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/">
+                        HOME
+                    </a></li>
+                    <li><a href="/admin/">SECRET</a></li>
+                    <li><a href="/bookmark/">BOOKMARK</a></li>
+                    <li><a href="/blog/">BLOG</a></li>
+                    <li><a href="/blog/">CHAT</a></li>
+                </ul>
+
+
+
+
+        <div class="navbar-nav" style="padding-top: 10px;">
+            <a href="/accounts/logout/">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Sign Out</button>
+            </a>
+            <a href="/accounts/password_change/">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Change Password</button>
+            </a>
+        </div>
+
+
+    </div>
+</nav>
+
+
+<br><br>
+
+<div class="row">
+
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 logo">
+        <div class="thumbnail formCard">
+            <h3>upload new post at this blog</h4>
+            <br>
+            <p>please write the information exactly</p>
+            <br><br>
+
+            <form class="card-text top-buffer" action="." method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+
+                <fieldset class="aligned">
+                    <div class="form-group">
+                        Title: {{ form.title }}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        {{ form.image }}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        Description: {{ form.description }}
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Upload</button>
+                    <br>
+                    <br>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+
+</body>
+</html>

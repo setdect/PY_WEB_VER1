@@ -1,29 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        #content{
-        text-align:center;
-        font-size : 20px;
-        width : 1200px; height:700px;
-        margin: auto;
-    </style>
+    <title>D.LAB X Django</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 </head>
+<style>
+	a{
+	    color: white;
+	    font-size: 15px;
+	    font-weight: bold;
+	}
+	h5 {
+	    font-size: 15px;
+	    font-weight: bold;
+	}
+
+</style>
 <body>
 
-<div id = "content" >
-    <h1 id = "title">
-        <span class="small">THIS IS ME!</span>
-    </h1>
 
-    <u1>
-    {% for bookmark in object_list %}
-        <li><a href = "{% url 'detail' bookmark.id %}">{{bookmark}}</a> </li>
-    {% endfor %}
-    </u1>
+<br>
+<div class="container p-3 my-3 bg-dark text-white">
+    <h1>Bookmark App Options:</h1>
+<nav class="main_text" id = "menu">
+        <li>
+            <a href="{% url 'index'%}">
+                <img src = "../media/5.PNG">
+            </a>
+        </li>
+
+        <li><a href="{% url 'admin:index'%}">SECRET</a></li>
+        <li><a href="{% url 'bookmark_index'%}">2.-ABOUTME-</a></li>
+        <li><a href="{% url 'blog_index'%}">3.-BLOG-</a></li>
 </div>
+
+<br>
+<div class = "row">
+    <div class="col-sm-6 left">
+      <div class="thumbnail">
+        <img src = "../media/marshmello (2).jpg">
+        <h2>BOOKMARK</h2>
+        <h5>I've make this website with DJango Program this programm you can make with javascript too</h5>
+      </div>
+    </div>
+
+    <div class="col-sm-6 right">
+      <div class="thumbnail">
+        <img src = "../media/the moon.jpg">
+        <h2>YOUTUBE BOOKMARKWEB</h2>
+        <h5>THE YOUTUBE BOOKMRAK WEB</h5>
+      </div>
+    </div>
+<br><br>
+
+
+
 
 </body>
 </html>
+
+

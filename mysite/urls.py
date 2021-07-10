@@ -18,7 +18,7 @@ from django.contrib import admin
 from mysite.views import IndexView, UserCreateDoneTV, UserCreateView
 
 from bookmark.views import BookmarkLV, BookmarkDV
-from blog.views import PostLV, PostDV
+from blog.views import PostLV, PostDV, PostCV, PostDeleteView
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -40,6 +40,13 @@ urlpatterns = [
     url(r'^blog/(?P<pk>\d+)/$',
         PostDV.as_view(),
         name='blog_detail'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^blog/add/$',
+        PostCV.as_view(),
+        name='blog_add'),
+    url(r'^blog/(?P<pk>\d+)/delete/$',
+        PostDeleteView.as_view(),
+        name="blog_delete"),
+
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
